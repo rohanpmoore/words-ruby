@@ -1,4 +1,6 @@
-<ol>
+<p>Here are the words you've added so far.  Click on any word to go to its definitions page.</p>
+
+<ul>
   <% @words.each do |word| %>
   <% if word.word == "rickroll" %>
   <li><a href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'><%= word.word %></a></li>
@@ -6,7 +8,7 @@
   <li><a href='/word/<%= word.id %>'><%= word.word %></a></li>
   <% end %>
   <% end %>
-</ol>
+</ul>
 
 <form action="/submit" method="post">
   <label for="word-field">Input a word here:</label>

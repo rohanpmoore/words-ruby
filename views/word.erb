@@ -1,9 +1,9 @@
-<h3>Your Definitions:</h3>
-<ul>
+<h4>Your Definitions for <%= @word.word %>:</h4>
+<ol>
   <% @word.definitions.each do |definition| %>
   <li><%= definition %></li>
   <% end %>
-</ul>
+</ol>
 
 <form action="/word/<%= @word.id %>" method="post">
   <label>Think you know the definition? Input it below!</label><br>
