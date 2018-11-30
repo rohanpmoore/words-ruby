@@ -10,6 +10,7 @@ describe('Dictionary') do
       it('creates a new word based on user input') do
         word = Dictionary::Word.new({:word=> "airplane"})
         expect(word.word).to(eq('airplane'))
+        expect(word.definitions).to(eq([]))
       end
       it('adds the new word to the database immediately') do
         word = Dictionary::Word.new({:word=> "telephone"})
@@ -20,11 +21,24 @@ describe('Dictionary') do
       it('gets an empty array if no words exist') do
         expect(Dictionary::Word.all).to(eq([]))
       end
+      it('receives an array of all existing words') do
+        word1 = Dictionary::Word.new({:word=> "airplane"})
+        expect(Dictionary::Word.all).to(eq([word1]))
+        word2 = Dictionary::Word.new({:word=> "telephone"})
+        expect(Dictionary::Word.all).to(eq([word1, word2]))
+      end
     end
     describe('.clear') do
       it('clears the database of words') do
         Dictionary::Word.clear
         expect(Dictionary::Word.all).to(eq([]))
+      end
+    end
+    describe('#add_definition') do
+      it('adds a new definition to a word') do
+        word = Dictionary::Word.new({:word=> "telephone"})
+        word.add_definition("an apparatus, system, or process for transmission of sound or speech to a distant point, especially by an electric device.")
+        expect(word.definitions).to(eq(["an apparatus, system, or process for transmission of sound or speech to a distant point, especially by an electric device."]))
       end
     end
   end
