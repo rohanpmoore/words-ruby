@@ -6,7 +6,7 @@ module Dictionary
       @word = attributes.fetch(:word)
     end
     def self.all()
-      return nil
+      return @@dictionary
     end
   end
 end
