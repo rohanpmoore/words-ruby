@@ -8,7 +8,7 @@ get('/') do
   erb(:main)
 end
 
-post('/submit') do
+post('/word') do
   word = params['word-field']
   new_word = Dictionary::Word.new({:word=> word})
   @words = Dictionary::Word.all
