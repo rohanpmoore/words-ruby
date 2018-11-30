@@ -10,6 +10,7 @@ describe('website', {:type => :feature}) do
     click_button('Submit!')
     expect(page).to have_content("telephone")
   end
+  
   it('can add definitions to words') do
     visit('word/0')
     fill_in('definition', :with => "an apparatus, system, or process for transmission of sound or speech to a distant point, especially by an electric device.")
