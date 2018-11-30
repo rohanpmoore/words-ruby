@@ -1,0 +1,16 @@
+<h3>Your Definitions:</h3>
+<ul>
+  <% @word.definitions.each do |definition| %>
+  <li><%= definition %></li>
+  <% end %>
+</ul>
+
+<form action="/word/<%= @word.id %>" method="post">
+  <label>Think you know the definition? Input it below!</label><br>
+  <input type="text" name="definition">
+  <button type="submit" name="button">Submit!</button>
+</form>
+
+<form action="/" method="get">
+  <button type="submit" name="button">Back</button>
+</form>

@@ -41,5 +41,13 @@ describe('Dictionary') do
         expect(word.definitions).to(eq(["an apparatus, system, or process for transmission of sound or speech to a distant point, especially by an electric device."]))
       end
     end
+    describe('.fetch') do
+      it('fetches a specific word based on its id') do
+        word1 = Dictionary::Word.new({:word=> "airplane"})
+        word2 = Dictionary::Word.new({:word=> "telephone"})
+        word3 = Dictionary::Word.new({:word=> "dog"})
+        expect(Dictionary::Word.fetch(1)).to(eq(word2))
+      end
+    end
   end
 end

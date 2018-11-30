@@ -1,0 +1,15 @@
+<ol>
+  <% @words.each do |word| %>
+  <% if word.word == "rickroll" %>
+  <li><a href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'><%= word.word %></a></li>
+  <% else %>
+  <li><a href='/word/<%= word.id %>'><%= word.word %></a></li>
+  <% end %>
+  <% end %>
+</ol>
+
+<form action="/word" method="post">
+  <label for="word-field">Input a word here:</label>
+  <input type="text" name="word-field">
+  <button type="submit" name="button">Submit!</button>
+</form>
