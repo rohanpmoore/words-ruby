@@ -9,5 +9,10 @@ describe('Dictionary') do
         expect(word.word).to(eq('airplane'))
       end
     end
+    describe('.all') do
+      it('gets an empty array if no words exist') do
+        expect(Dictionary::Word.all).to(eq([]))
+      end
+    end
   end
 end
