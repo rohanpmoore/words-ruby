@@ -22,7 +22,7 @@ module Dictionary
     end
     def self.fetch(id)
       @@dictionary.each do |word|
-        if(word.id == id)
+        if(word.id == id.to_i)
           return word
         end
       end
